@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace orgBAPB
 {
-    public class AllEmploeesClassBAPB
-    {
+   
         // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
         /// <remarks/>
         [System.SerializableAttribute()]
@@ -41,7 +40,7 @@ namespace orgBAPB
         {
 
             /// <remarks/> определи заись об 1 чел.
-            public FILEEMPLOYEESEMPLOYEE EMPLOYEE { get; set; }
+            public FILEEMPLOYEESEMPLOYEE[] EMPLOYEE { get; set; }
         }
 
         /// <remarks/>
@@ -93,6 +92,10 @@ namespace orgBAPB
             private object beginDateVacField;
 
             private object endDateVacField;
+
+            public FILEEMPLOYEESEMPLOYEE()
+            {
+            }
 
             public FILEEMPLOYEESEMPLOYEE(string iDDivTenCharField, ushort iDTabNumberField, ushort tabNumberField, string familyField, string fNameField, string patronymicField, string sexField, string birthDayField, string adressField, object officeField, object phoneField, object intPhoneField, string emailField, ushort bankCodeField, uint iDDivisionField, string namePostsField, string beginDateField, object endDateField, byte activeField, object beginDateVacField, object endDateVacField, string iDDivTenChar, ushort iDTabNumber, ushort tabNumber, string family, string fName, string patronymic, string sex, string birthDay, string adress, object office, object phone, object intPhone, string email, ushort bankCode, uint iDDivision, string namePosts, string beginDate, object endDate, byte active, object beginDateVac, object endDateVac)
             {
@@ -415,6 +418,4 @@ namespace orgBAPB
         }
 
 
-
-    }
-}
+   }

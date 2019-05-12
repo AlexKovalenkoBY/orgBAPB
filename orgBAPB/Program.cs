@@ -7,7 +7,6 @@ using System.Xml.Serialization;
 using System.IO;
 
 
-
 namespace orgBAPB
 {
     class Program
@@ -16,16 +15,18 @@ namespace orgBAPB
         {
             
 
-            XmlSerializer formatter = new XmlSerializer(typeof(FILEEMPLOYEESEMPLOYEE));
-            
+            XmlSerializer formatter = new XmlSerializer(typeof(FILE2));
 
-            FILEEMPLOYEESEMPLOYEE[]  peoplesbapb= new FILEEMPLOYEESEMPLOYEE();
+
+            FILE2 peoplesbapb;
             using (FileStream fs = new FileStream("d:\\org\\SD_workman1.xml", FileMode.Open))
             {
-                peoplesbapb = (FILEEMPLOYEES)formatter.Deserialize(fs); ////!!
+                peoplesbapb = (FILE2)formatter.Deserialize(fs); ////!!
 
             }
-               
+           // for int i=1 lenght.
+           // peoplesbapb.EMPLOYEES.
+            
         }
     }
 }
