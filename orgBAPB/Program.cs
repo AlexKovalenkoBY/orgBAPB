@@ -43,6 +43,7 @@ namespace orgBAPB
 
             }
             structReader.Close();
+            Console.WriteLine(peoplesbapb.EMPLOYEES[3]);
             Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
             Console.WriteLine("всего подразделений " + count);
             Console.WriteLine(arrText[13]);
