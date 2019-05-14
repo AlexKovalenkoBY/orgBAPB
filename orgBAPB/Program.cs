@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
+using System.Collections;
 
 
 namespace orgBAPB
@@ -15,18 +16,37 @@ namespace orgBAPB
         {
             
 
-            XmlSerializer formatter = new XmlSerializer(typeof(FILE2));
+            XmlSerializer formatter = new XmlSerializer(typeof(FILE));
 
 
-            FILE2 peoplesbapb;
+            FILE peoplesbapb;
             using (FileStream fs = new FileStream("d:\\org\\SD_workman1.xml", FileMode.Open))
             {
-                peoplesbapb = (FILE2)formatter.Deserialize(fs); ////!!
+
+                peoplesbapb = (FILE)formatter.Deserialize(fs); ////!!
 
             }
-           // for int i=1 lenght.
-           // peoplesbapb.EMPLOYEES.
             
+           
+          
+            StreamReader structReader = new StreamReader("d:\\org\\apbstr.000.txt"); //structReader указатель файла оргструктуры
+            string sLine = "";
+            ArrayList arrText = new ArrayList();
+            int count = 0;
+            while (sLine != null)
+            {
+                sLine = structReader.ReadLine();
+                if (sLine != null) { 
+                    arrText.Add(sLine);
+                    count++;
+                }
+
+            }
+            structReader.Close();
+            Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
+            Console.WriteLine("всего подразделений " + count);
+            Console.WriteLine(arrText[13]);
+            Console.ReadLine();
         }
     }
 }
