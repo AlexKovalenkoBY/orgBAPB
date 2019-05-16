@@ -29,24 +29,30 @@ namespace orgBAPB
             
            
           
-            StreamReader structReader = new StreamReader("d:\\org\\apbstr.000.txt"); //structReader указатель файла оргструктуры
+            StreamReader structReader = new StreamReader("d:\\org\\apbstr.000.txt",Encoding.GetEncoding(1251)); //structReader указатель файла оргструктуры
             string sLine = "";
-            ArrayList arrText = new ArrayList();
-            int count = 0;
+            string[] arrText;
+                
+            
+            var podrs = new List<Podr>();
+
             while (sLine != null)
             {
                 sLine = structReader.ReadLine();
-                if (sLine != null) { 
-                    arrText.Add(sLine);
-                    count++;
+                if (sLine != null) {
+                    //arrText.Add(sLine);
+                    arrText = sLine.Split('|');
+                    podrs.Add(new Podr() { ID = int.Parse(arrText[0]), CodeSp = arrText[1] });
+                    
                 }
 
             }
             structReader.Close();
-            Console.WriteLine(peoplesbapb.EMPLOYEES[3]);
+            Console.WriteLine(peoplesbapb.EMPLOYEES[3].FName);
             Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
-            Console.WriteLine("всего подразделений " + count);
-            Console.WriteLine(arrText[13]);
+            Console.WriteLine("всего подразделений " + podrs.Count);
+            Console.WriteLine(podrs[13].CodeSp);
+
             Console.ReadLine();
         }
     }
