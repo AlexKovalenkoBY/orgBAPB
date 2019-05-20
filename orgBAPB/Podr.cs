@@ -29,7 +29,7 @@ namespace orgBAPB
         public int codeBIc;  //19.	БИК (последние 3 цифры банковского идентификационного кода)
         public DateTime datebeginSP; //20.	дата начала действия объекта
         public DateTime dateendSP; //21.	дата окончания действия объекта
-        public DateTime datebeginSP; //22.	дата модификации объекта
+        public DateTime datechangeSP; //22.	дата модификации объекта
         
 
 
