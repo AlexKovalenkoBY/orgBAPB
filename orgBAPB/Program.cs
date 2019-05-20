@@ -20,7 +20,7 @@ namespace orgBAPB
 
 
             FILE peoplesbapb;
-            using (FileStream fs = new FileStream("d:\\org\\SD_workman1.xml", FileMode.Open))
+            using (FileStream fs = new FileStream("d:\\org\\SD_workman.xml", FileMode.Open))
             {
 
                 peoplesbapb = (FILE)formatter.Deserialize(fs); ////!!
