@@ -27,9 +27,9 @@ namespace orgBAPB
         public string paretnSP; // 17.	код родительского объекта организационно-территориальной структуры (10 знаков без разделения)
         public string childSP; //18.	код приемника (10 знаков без разделения)
         public int codeBIc;  //19.	БИК (последние 3 цифры банковского идентификационного кода)
-        public datetime datebeginSP; //20.	дата начала действия объекта
-        public datetime dateendSP; //21.	дата окончания действия объекта
-        public datetime datebeginSP; //22.	дата модификации объекта
+        public DateTime datebeginSP; //20.	дата начала действия объекта
+        public DateTime dateendSP; //21.	дата окончания действия объекта
+        public DateTime datebeginSP; //22.	дата модификации объекта
         
 
 
