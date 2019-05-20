@@ -51,7 +51,7 @@ namespace orgBAPB
             Console.WriteLine(peoplesbapb.EMPLOYEES[3].FName);
             Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
             Console.WriteLine("всего подразделений " + podrs.Count);
-            Console.WriteLine(podrs[13].CodeSp);
+            Console.WriteLine(podrs[537].CodeSp+" "+podrs[537].codeBIc+" "+podrs[537].NameBranch+" "+podrs[537].namecity+" "+podrs[537].streetname);
 
             Console.ReadLine();
         }
