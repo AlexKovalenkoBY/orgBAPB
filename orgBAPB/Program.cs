@@ -13,6 +13,16 @@ namespace orgBAPB
 {
     class Program
     {
+        static int? fromstring(string s)
+         {
+          return string.IsNullOrEmpty(s) ? (int?)null : int.Parse(s);
+         }
+
+        static DateTime? fromdate(string s)
+        {
+            return string.IsNullOrEmpty(s) ? (DateTime?) null : Convert.ToDateTime(s, CultureInfo.InstalledUICulture);
+        }
+
         static void Main(string[] args)
         {
             
@@ -43,12 +53,30 @@ namespace orgBAPB
                 if (sLine != null) {
                     //arrText.Add(sLine);
                     arrText = sLine.Split('|');
-                    podrs.Add(new Podr() { ID = Int32.Parse(arrText[0]), CodeSp = arrText[1] , NameBranch = arrText[2], NameSp = arrText[3],
-                    countrycode = Int32.Parse(arrText[4]), postindex  = Int32.Parse(arrText[5]), region = arrText[6], area = arrText[7], citytype = arrText[8]});/*
-                    namecity = arrText[9], streettype = arrText[10], streetname = arrText[11], housenumber = Int32.Parse(arrText[12]), buildnumber = Int32.Parse(arrText[13]),
-                        roomnumber = Int32.Parse(arrText[14]), firstgroupnumber = Int32.Parse(arrText[15]), paretnSP = arrText[16],  childSP = arrText[17], codeBIc = Int32.Parse(arrText[18]),
-                        datebeginSP = Convert.ToDateTime(arrText[19], CultureInfo.InstalledUICulture), datechangeSP = Convert.ToDateTime(arrText[20], CultureInfo.InstalledUICulture),
-                        dateendSP = Convert.ToDateTime(arrText[21],CultureInfo.InstalledUICulture) 
+                    podrs.Add(new Podr() { ID = Int32.Parse(arrText[0]),
+                        CodeSp = arrText[1] ,
+                        NameBranch = arrText[2],
+                        NameSp = arrText[3],
+                    countrycode = fromstring(arrText[4]),
+                        postindex  = fromstring(arrText[5]),
+                        region = arrText[6],
+                        area = arrText[7],
+                        citytype = arrText[8],
+                    namecity = arrText[9],
+                        streettype = arrText[10],
+                        streetname = arrText[11],
+                        housenumber = arrText[12],
+                        buildnumber = arrText[13],
+                        roomnumber = fromstring(arrText[14]),
+                        firstgroupnumber = fromstring(arrText[15]),
+                        paretnSP = arrText[16],
+                        childSP = arrText[17],
+                        codeBIc = fromstring(arrText[18]),
+                        datebeginSP = fromdate(arrText[19]),
+                        datechangeSP = fromdate(arrText[20]),
+                        dateendSP = fromdate(arrText[21])
+                    });
+                    /*
                     */
                 }
 

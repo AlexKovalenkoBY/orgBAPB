@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllEmploeesClassBAPB.cs" />
+    <Compile Include="parentchild.cs" />
     <Compile Include="Podr.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
