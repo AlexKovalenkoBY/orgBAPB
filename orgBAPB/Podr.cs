@@ -24,13 +24,14 @@ namespace orgBAPB
         public string buildnumber; //14.	номер корпуса
         public int? roomnumber;// 15.	номер помещения
         public int? firstgroupnumber;// 16.	код группы РКЦ (1 знак)
-        public string paretnSP; // 17.	код родительского объекта организационно-территориальной структуры (10 знаков без разделения)
+        public string parentSP; // 17.	код родительского объекта организационно-территориальной структуры (10 знаков без разделения)
         public string childSP; //18.	код приемника (10 знаков без разделения)
         public int? codeBIc;  //19.	БИК (последние 3 цифры банковского идентификационного кода)
         public DateTime? datebeginSP; //20.	дата начала действия объекта
         public DateTime? dateendSP; //21.	дата окончания действия объекта
         public DateTime? datechangeSP; //22.	дата модификации объекта
 
+        public List<Podr> Childs;
     }
 
 

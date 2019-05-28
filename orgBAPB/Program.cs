@@ -46,6 +46,8 @@ namespace orgBAPB
                 
             
             var podrs = new List<Podr>();
+            var podrs_real = new List<Podr>(); // для действующих СП
+
 
             while (sLine != null)
             {
@@ -69,12 +71,12 @@ namespace orgBAPB
                         buildnumber = arrText[13],
                         roomnumber = fromstring(arrText[14]),
                         firstgroupnumber = fromstring(arrText[15]),
-                        paretnSP = arrText[16],
+                        parentSP = arrText[16],
                         childSP = arrText[17],
                         codeBIc = fromstring(arrText[18]),
                         datebeginSP = fromdate(arrText[19]),
-                        datechangeSP = fromdate(arrText[20]),
-                        dateendSP = fromdate(arrText[21])
+                        dateendSP = fromdate(arrText[20]),
+                        datechangeSP = fromdate(arrText[21]),
                     });
                     /*
                     */
@@ -82,10 +84,16 @@ namespace orgBAPB
 
             }
             structReader.Close();
-            for (int i = 0; i < podrs.Count; i++)
+            for (int i = podrs.Count-1; i >-1 ; i--)
             {
-                if (podrs[i].dateendSP != null) podrs.Remove(podrs[i]);
+                if (podrs[i].dateendSP != null)
+                {
+                   podrs.Remove(podrs[i]);
+                }
             }
+
+            Podr root = new TreeCreator().CreateTree(podrs);
+            //stringbuilder 
             Console.WriteLine(peoplesbapb.EMPLOYEES[3].FName);
             Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
             Console.WriteLine("всего подразделений " + podrs.Count);
