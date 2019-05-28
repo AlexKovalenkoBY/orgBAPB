@@ -82,6 +82,10 @@ namespace orgBAPB
 
             }
             structReader.Close();
+            for (int i = 0; i < podrs.Count; i++)
+            {
+                if (podrs[i].dateendSP != null) podrs.Remove(podrs[i]);
+            }
             Console.WriteLine(peoplesbapb.EMPLOYEES[3].FName);
             Console.WriteLine("всего сотрудников " + peoplesbapb.EMPLOYEES.Length);
             Console.WriteLine("всего подразделений " + podrs.Count);
